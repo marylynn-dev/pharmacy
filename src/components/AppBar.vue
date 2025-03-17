@@ -7,19 +7,24 @@
         </template>
       </v-list-item>
     </v-list>
-    <template #append>
-      <v-btn text="Log out"></v-btn>
-    </template>
+
+    <!-- Navigation Links -->
     <v-list nav active-color="#1D242E">
       <v-list-item
         v-for="item in navigationItems"
         :key="item.title"
         :prepend-icon="item.icon"
         :title="item.title"
+        :to="item.route"
         link
       />
     </v-list>
+
+    <template #append>
+      <v-btn text="Log out"></v-btn>
+    </template>
   </v-navigation-drawer>
+
   <v-app-bar flat>
     <v-container>
       <v-row>
@@ -37,7 +42,8 @@
         </v-col>
 
         <v-spacer></v-spacer>
-        <!-- Account Icon -->
+
+        <!-- Account Icons -->
         <v-col class="d-flex align-center justify-end ga-5">
           <v-icon>mdi-bell-badge-outline</v-icon>
           <v-btn icon @click="toggleTheme" variant="text">
@@ -68,11 +74,11 @@ const toggleTheme = () => {
 const isDarkTheme = computed(() => theme.global.current.value.dark);
 
 const navigationItems = [
-  { title: "Dashboard", icon: "mdi-view-dashboard" },
-  { title: "Medication", icon: "mdi-pill" },
-  { title: "Suppliers", icon: "mdi-truck-delivery" },
-  { title: "Orders", icon: "mdi-cart" },
-  { title: "Reports", icon: "mdi-file-chart" },
-  { title: "Analytics", icon: "mdi-chart-bar" },
+  { title: "Dashboard", icon: "mdi-view-dashboard", route: "/dashboard" },
+  { title: "Medication", icon: "mdi-pill", route: "/medications" },
+  { title: "Suppliers", icon: "mdi-truck-delivery", route: "/suppliers" },
+  { title: "Orders", icon: "mdi-cart", route: "/orders" },
+  { title: "Reports", icon: "mdi-file-chart", route: "/reports" },
+  { title: "Analytics", icon: "mdi-chart-bar", route: "/analytics" },
 ];
 </script>

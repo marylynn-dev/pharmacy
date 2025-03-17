@@ -4,7 +4,9 @@
       <p class="text-h5 font-weight-bold">{{ title }}</p>
       <p class="font-weight-light text-secondary">{{ subtitle }}</p>
     </v-col>
-    <v-col></v-col>
+    <v-col>
+      <v-btn>Add new Item </v-btn>
+    </v-col>
   </v-row>
 </template>
 

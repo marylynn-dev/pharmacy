@@ -9,6 +9,12 @@
         <dashcard :card="card" />
       </v-col>
     </v-row>
+
+    <v-row v-for="n in 2">
+      <v-col v-for="n in 2">
+        <dashcard2 />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
