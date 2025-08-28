@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer color="#283342">
+  <v-navigation-drawer color="#283342" permanent width="200" nav>
     <v-list bg-color="#1D242E">
       <v-list-item title="Primecare">
         <template #prepend>
@@ -25,7 +25,7 @@
     </template>
   </v-navigation-drawer>
 
-  <v-app-bar flat>
+  <v-app-bar flat height="40 ">
     <v-container>
       <v-row>
         <!-- Search Bar -->

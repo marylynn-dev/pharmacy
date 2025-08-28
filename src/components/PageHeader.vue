@@ -1,11 +1,14 @@
 <template>
-  <v-row>
-    <v-col cols="12" md="8" lg="4">
-      <p class="text-h5 font-weight-bold">{{ title }}</p>
-      <p class="font-weight-light text-secondary">{{ subtitle }}</p>
+  <v-row align="center">
+    <v-col cols="12" md="6" lg="4">
+      <p class="text-subtitle-1 font-weight-bold">{{ title }}</p>
+      <p class="text-body-2 text-secondary">{{ subtitle }}</p>
     </v-col>
-    <v-col>
-      <v-btn>Add new Item </v-btn>
+    <v-spacer />
+    <v-col cols="auto">
+      <v-btn variant="outlined" rounded="sm" size="small">
+        Download Report
+      </v-btn>
     </v-col>
   </v-row>
 </template>

@@ -20,7 +20,6 @@
 
 <script setup>
 import PageHeader from "@/components/PageHeader.vue";
-import { definePage } from "vue-router/auto";
 
 const cardData = [
   {
