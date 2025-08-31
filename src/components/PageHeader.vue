@@ -6,8 +6,8 @@
     </v-col>
     <v-spacer />
     <v-col cols="auto">
-      <v-btn variant="outlined" rounded="sm" size="small">
-        Download Report
+      <v-btn :variant="btnVariant" rounded="sm" size="small" :color="btnColor" :prepend-icon="btnIcon" class="text-caption">
+        {{ text }}
       </v-btn>
     </v-col>
   </v-row>
@@ -17,5 +17,19 @@
 const props = defineProps({
   title: String,
   subtitle: String,
+  text: {
+    type: String,
+    default: "Add New",
+  },
+  btnColor: {
+    type: String,
+  },
+  btnVariant: {
+    type: String,
+    default: "flat",
+  },
+  btnIcon: {
+    type: String,
+  },
 });
 </script>

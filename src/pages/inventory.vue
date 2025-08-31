@@ -1,8 +1,11 @@
 <template>
   <v-container>
     <PageHeader
-      title="Medications"
+      title="Inventory"
       subtitle="List of medicines available for sale"
+      text="Add New Medication"
+      btnColor="red"
+      btnIcon="mdi-plus"
     />
     <v-row>
       <v-col v-for="card in cardData" cols="3">
@@ -13,6 +16,8 @@
 </template>
 
 <script setup>
+import index from "@/pages/index.vue";
+
 const cardData = [
   {
     text: "Good",

@@ -1,10 +1,29 @@
 <template>
-  <v-navigation-drawer color="#283342" permanent width="200" nav>
+  <v-navigation-drawer
+    color="#283342"
+    permanent
+    width="200"
+    class="text-caption"
+  >
     <v-list bg-color="#1D242E">
       <v-list-item title="Primecare">
         <template #prepend>
           <v-icon color="red">mdi-cart</v-icon>
         </template>
+      </v-list-item>
+      <v-list-item>
+        <template #prepend>
+          <v-avatar size="30" class="mr-2" rounded="sm">
+            <img src="https://cdn.vuetifyjs.com/images/john.png" alt="Avatar" />
+          </v-avatar>
+        </template>
+        <v-list-item-title class="text-caption">Admin</v-list-item-title>
+        <v-list-item-subtitle class="text-caption"
+          >Super Admin</v-list-item-subtitle
+        >
+        <template #append
+          ><v-btn icon="mdi-dots-vertical" variant="text" size="small"></v-btn
+        ></template>
       </v-list-item>
     </v-list>
 
@@ -25,36 +44,35 @@
     </template>
   </v-navigation-drawer>
 
-  <v-app-bar flat height="40 ">
-    <v-container>
-      <v-row>
-        <!-- Search Bar -->
-        <v-col cols="12" md="8" lg="4">
-          <v-text-field
-            append-inner-icon="mdi-magnify"
-            density="compact"
-            variant="outlined"
-            placeholder="Search Here"
-            rounded="0"
-            class="d-flex"
-            min-width="200px"
-          ></v-text-field>
-        </v-col>
+  <v-app-bar flat height="56">
+    <!-- Search Bar -->
+    <v-text-field
+      append-inner-icon="mdi-magnify"
+      density="compact"
+      variant="outlined"
+      placeholder="Search for anything here"
+      rounded="0"
+      hide-details
+      class="ma-2 text-caption"
+      style="max-width: 300px"
+    ></v-text-field>
 
-        <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
 
-        <!-- Account Icons -->
-        <v-col class="d-flex align-center justify-end ga-5">
-          <v-icon>mdi-bell-badge-outline</v-icon>
-          <v-btn icon @click="toggleTheme" variant="text">
-            <v-icon>{{
-              isDarkTheme ? "mdi-brightness-4" : "mdi-brightness-7"
-            }}</v-icon>
-          </v-btn>
-          <v-icon>mdi-account</v-icon>
-        </v-col>
-      </v-row>
-    </v-container>
+    <!-- Account Icons -->
+    <v-btn icon variant="text">
+      <v-icon>mdi-bell-badge-outline</v-icon>
+    </v-btn>
+
+    <v-btn icon variant="text" @click="toggleTheme">
+      <v-icon>{{
+        isDarkTheme ? "mdi-brightness-4" : "mdi-brightness-7"
+      }}</v-icon>
+    </v-btn>
+
+    <v-btn icon variant="text">
+      <v-icon>mdi-account</v-icon>
+    </v-btn>
   </v-app-bar>
 </template>
 
@@ -75,7 +93,7 @@ const isDarkTheme = computed(() => theme.global.current.value.dark);
 
 const navigationItems = [
   { title: "Dashboard", icon: "mdi-view-dashboard", route: "/dashboard" },
-  { title: "Medication", icon: "mdi-pill", route: "/medications" },
+  { title: "Inventory", icon: "mdi-pill", route: "/inventory" },
   { title: "Suppliers", icon: "mdi-truck-delivery", route: "/suppliers" },
   { title: "Orders", icon: "mdi-cart", route: "/orders" },
   { title: "Reports", icon: "mdi-file-chart", route: "/reports" },

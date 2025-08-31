@@ -3,6 +3,8 @@
     <PageHeader
       title="Dashboard"
       subtitle="A quick data overview of the inventory"
+      text="Download Report"
+      btnVariant="outlined"
     />
     <v-row>
       <v-col v-for="card in cardData" cols="3">
@@ -20,7 +22,6 @@
 
 <script setup>
 import PageHeader from "@/components/PageHeader.vue";
-import { definePage } from "vue-router/auto";
 
 const cardData = [
   {
