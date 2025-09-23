@@ -1,79 +1,145 @@
-# Vuetify (Default)
+# Pharmacy Inventory Management System
 
-This is the official scaffolding tool for Vuetify, designed to give you a head start in building your new Vuetify application. It sets up a base template with all the necessary configurations and standard directory structure, enabling you to begin development without the hassle of setting up the project from scratch.
+A **web application** designed to help pharmacies manage medicines, track stock levels, monitor expiry dates, and generate reports. The system supports **role-based access control (RBAC)** for admins and staff, ensuring efficient and accurate inventory management.
 
-## ❗️ Important Links
+This project uses:
 
-- 📄 [Docs](https://vuetifyjs.com/)
-- 🚨 [Issues](https://issues.vuetifyjs.com/)
-- 🏬 [Store](https://store.vuetifyjs.com/)
-- 🎮 [Playground](https://play.vuetifyjs.com/)
-- 💬 [Discord](https://community.vuetifyjs.com)
+* **Frontend:** Vue.js + Vuetify
+* **Backend:** Node.js + Express
+* **Database:** (add the DB you’re using, e.g., MongoDB / MySQL / PostgreSQL)
 
-## 💿 Install
+---
 
-Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
+## 🚀 Features
 
-| Package Manager                                                | Command        |
-|---------------------------------------------------------------|----------------|
-| [yarn](https://yarnpkg.com/getting-started)                   | `yarn install` |
-| [npm](https://docs.npmjs.com/cli/v7/commands/npm-install)     | `npm install`  |
-| [pnpm](https://pnpm.io/installation)                          | `pnpm install` |
-| [bun](https://bun.sh/#getting-started)                        | `bun install`  |
+* **Medicine Management** – Add, update, and delete medicine records.
+* **Stock Tracking** – Monitor stock levels and get alerts for low inventory.
+* **Expiry Monitoring** – Track medicine expiry dates to avoid dispensing expired drugs.
+* **Reports & Analytics** – Generate sales, inventory, and expiry reports.
+* **Role-Based Access** –
 
-After completing the installation, your environment is ready for Vuetify development.
+  * **Admin:** Full control (manage medicines, users, reports).
+  * **Staff:** Limited access (update stock, view medicines, sales).
+* **Search & Filtering** – Quickly search medicines by name, category, or batch.
+* **Responsive Design** – Works across desktop and mobile devices.
 
-## ✨ Features
+---
 
-- 🖼️ **Optimized Front-End Stack**: Leverage the latest Vue 3 and Vuetify 3 for a modern, reactive UI development experience. [Vue 3](https://v3.vuejs.org/) | [Vuetify 3](https://vuetifyjs.com/en/)
-- 🗃️ **State Management**: Integrated with [Pinia](https://pinia.vuejs.org/), the intuitive, modular state management solution for Vue.
-- 🚦 **Routing and Layouts**: Utilizes Vue Router for SPA navigation and vite-plugin-vue-layouts for organizing Vue file layouts. [Vue Router](https://router.vuejs.org/) | [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)
-- ⚡ **Next-Gen Tooling**: Powered by Vite, experience fast cold starts and instant HMR (Hot Module Replacement). [Vite](https://vitejs.dev/)
-- 🧩 **Automated Component Importing**: Streamline your workflow with unplugin-vue-components, automatically importing components as you use them. [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
+## 🛠️ Tech Stack
 
-These features are curated to provide a seamless development experience from setup to deployment, ensuring that your Vuetify application is both powerful and maintainable.
+**Frontend:**
 
-## 💡 Usage
+* Vue.js (composition API)
+* Vuetify (Material Design components)
 
-This section covers how to start the development server and build your project for production.
+**Backend:**
 
-### Starting the Development Server
+* Node.js
+* Express.js
+* Authentication (JWT or session-based)
 
-To start the development server with hot-reload, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000):
+**Database:**
 
-```bash
-yarn dev
-```
+* (Specify: MySQL / MongoDB / PostgreSQL)
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+---
 
-> Add NODE_OPTIONS='--no-warnings' to suppress the JSON import warnings that happen as part of the Vuetify import mapping. If you are on Node [v21.3.0](https://nodejs.org/en/blog/release/v21.3.0) or higher, you can change this to NODE_OPTIONS='--disable-warning=5401'. If you don't mind the warning, you can remove this from your package.json dev script.
-
-### Building for Production
-
-To build your project for production, use:
+## 📂 Project Structure
 
 ```bash
-yarn build
+pharmacy-inventory-system/
+├── backend/          # Node.js + Express API
+│   ├── controllers/  
+│   ├── models/  
+│   ├── routes/  
+│   └── server.js  
+│
+├── frontend/         # Vue.js + Vuetify
+│   ├── src/  
+│   │   ├── assets/  
+│   │   ├── components/  
+│   │   ├── views/  
+│   │   └── router/  
+│   └── package.json  
+│
+└── README.md  
 ```
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+---
 
-Once the build process is completed, your application will be ready for deployment in a production environment.
+## ⚙️ Installation & Setup
 
-## 💪 Support Vuetify Development
+### 1. Clone the Repository
 
-This project is built with [Vuetify](https://vuetifyjs.com/en/), a UI Library with a comprehensive collection of Vue components. Vuetify is an MIT licensed Open Source project that has been made possible due to the generous contributions by our [sponsors and backers](https://vuetifyjs.com/introduction/sponsors-and-backers/). If you are interested in supporting this project, please consider:
+```bash
+git clone https://github.com/your-username/pharmacy-inventory-system.git
+cd pharmacy-inventory-system
+```
 
-- [Requesting Enterprise Support](https://support.vuetifyjs.com/)
-- [Sponsoring John on Github](https://github.com/users/johnleider/sponsorship)
-- [Sponsoring Kael on Github](https://github.com/users/kaelwd/sponsorship)
-- [Supporting the team on Open Collective](https://opencollective.com/vuetify)
-- [Becoming a sponsor on Patreon](https://www.patreon.com/vuetify)
-- [Becoming a subscriber on Tidelift](https://tidelift.com/subscription/npm/vuetify)
-- [Making a one-time donation with Paypal](https://paypal.me/vuetify)
+### 2. Backend Setup
 
-## 📑 License
-[MIT](http://opensource.org/licenses/MIT)
+```bash
+cd backend
+npm install
+```
 
-Copyright (c) 2016-present Vuetify, LLC
+* Create a `.env` file inside `backend/` with the following (example):
+
+```
+PORT=5000
+DB_URI=mongodb://localhost:27017/pharmacy
+JWT_SECRET=your_jwt_secret
+```
+
+* Start the backend server:
+
+```bash
+npm start
+```
+
+### 3. Frontend Setup
+
+```bash
+cd frontend
+npm install
+```
+
+* Start the Vue development server:
+
+```bash
+npm run serve
+```
+
+The frontend runs on [http://localhost:8080](http://localhost:8080) and connects to the backend API.
+
+---
+
+## 👥 User Roles
+
+* **Admin**:
+
+  * Manage medicines
+  * Manage users
+  * Generate reports
+* **Staff**:
+
+  * View medicines
+  * Update stock
+  * Record sales
+
+---
+
+## 📊 Future Improvements
+
+* Barcode scanning support for medicines.
+* Email/SMS alerts for low stock & near-expiry drugs.
+* Multi-branch support for pharmacy chains.
+* Cloud deployment (Docker, Railway, Heroku, AWS).
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** – free to use and modify.
+
+---
